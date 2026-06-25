@@ -1,0 +1,99 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    font: "JetBrainsMono Nerd Font 13";
+    display-drun: "";
+    drun-display-format: "{name}";
+}
+
+* {
+    /* Catppuccin Mocha Palette - 'base' hat jetzt Transparenz (b3) für den Blur */
+    base:   #1e1e2eb3;
+    mantle: #181825;
+    text:   #cdd6f4;
+    subtext0: #a6adc8;
+    blue:   #89b4fa;
+    surface0: #313244;
+
+    /* Zwingt ALLE Elemente standardmäßig unsichtbar zu sein */
+    background-color: transparent;
+    text-color: @text;
+
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @base;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 16px;
+    width: 600px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    padding: 20px;
+    spacing: 15px;
+}
+
+inputbar {
+    background-color: @surface0;
+    border-radius: 12px;
+    padding: 15px 20px;
+    spacing: 15px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @blue;
+    font: "JetBrainsMono Nerd Font 16";
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Search apps...";
+    placeholder-color: @subtext0;
+    text-color: @text;
+    vertical-align: 0.5;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+listview {
+    columns: 1;
+    lines: 7;
+    cycle: true;
+    dynamic: true;
+    fixed-height: false;
+    scrollbar: false;
+    spacing: 5px;
+}
+
+element {
+    padding: 10px 15px;
+    border-radius: 10px;
+    spacing: 15px;
+    background-color: transparent;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+/* Hier wird der helle Hintergrund überschrieben */
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element selected.normal {
+    background-color: @blue;
+    text-color: @base;
+}

@@ -1,0 +1,112 @@
+@import "colors/catppuccin-mocha.css";
+
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: bold;
+}
+
+window#waybar {
+    /* Das alpha() ist der Zaubertrick gegen schwarze Ecken */
+    background-color: alpha(@bg, 0.99);
+    color: @text;
+    border-radius: 0 0 20px 20px;
+}
+
+/* =============================================================================
+   CENTER MODULE
+   ============================================================================= */
+#workspaces {
+    min-width: 100px;
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    margin: 11px 0;
+    border-radius: 99px;
+}
+
+#workspaces button {
+    background-color: @surf0;
+    color: transparent;
+    padding: 0px 5px;
+    border-radius: 99px;
+    margin: 0 2px;
+    min-width: 4px;
+}
+
+#workspaces button.active {
+    background-color: @blue;
+    min-width: 1.4rem;
+    font-weight: 800;
+    transition: all 200ms ease-in-out;
+}
+
+#clock,
+#clock#right {
+    margin: 0 15px;
+    font-size: 1.12rem;
+}
+
+/* =============================================================================
+   LAYOUT & CAVA
+   ============================================================================= */
+.modules-left {
+    margin-left: 12px;
+}
+
+.modules-right {
+    margin-right: 12px;
+}
+
+#cava {
+    margin: 0 12px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: @teal;
+}
+
+/* =============================================================================
+   MODUL-EFFEKTE (GTK3-Safe Hover)
+   ============================================================================= */
+
+/* Gemeinsames Basis-Styling */
+#cpu,
+#memory,
+#pulseaudio {
+    background-color: @surf0; /* Ein dezent dunkles Grau für die Pille */
+    padding: 2px 10px;
+    margin: 6px 4px; /* Abstand oben/unten und zwischen den Pills */
+    border-radius: 12px; /* Cleane Rundungen */
+
+    /* Die sanfte Animation für Farbe und Hintergrund */
+    transition: all 0.3s ease;
+}
+
+/* Spezifische Text-Farben im Idle-Zustand */
+#cpu {
+    color: @sapphire;
+}
+#memory {
+    color: @mauve;
+}
+#pulseaudio {
+    color: @green;
+}
+
+/* =============================================================================
+   HOVER: BUTTON POP-OUT
+   ============================================================================= */
+
+#cpu:hover {
+    background-color: @sapphire; /* Pille wird Blau */
+    color: @crust; /* Text wird extrem dunkel für perfekten Kontrast */
+}
+
+#memory:hover {
+    background-color: @mauve; /* Pille wird Pink/Lila */
+    color: @crust;
+}
+
+#pulseaudio:hover {
+    background-color: @green; /* Pille wird Grün */
+    color: @crust;
+}

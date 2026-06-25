@@ -1,0 +1,13 @@
+{
+  "lsp": {
+    "lua-language-server": {
+      "settings": {
+        "Lua": {
+          "workspace": {
+            "library": ["/usr/share/hypr/stubs"],
+          },
+        },
+      },
+    },
+  },
+}
